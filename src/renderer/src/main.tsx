@@ -12,6 +12,7 @@ import Register from './auth/register/Registe'
 import Home from './pages/home/Home'
 import Dashboard from './pages/dashboard/Dashboard'
 import UtilisateurPage from './pages/utilisateurs/UtilisateurPage'
+import AuthFacePage from './pages/auth-face'
 
 const route = createBrowserRouter([
   {
@@ -26,6 +27,10 @@ const route = createBrowserRouter([
       {
         path: '/register',
         element: <Register />
+      },
+      {
+        path: '/auth-face',
+        element: <AuthFacePage />
       }
     ]
   },

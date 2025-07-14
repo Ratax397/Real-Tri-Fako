@@ -1,5 +1,5 @@
 import React from 'react'
-import { FaEnvelope, FaRecycle, FaTimes, FaUserCircle, FaWallet } from 'react-icons/fa'
+import { FaTimes, FaUserCircle } from 'react-icons/fa'
 import { User } from '@renderer/data/Userdata'
 
 interface ModuleUserInfoProps {
@@ -21,30 +21,21 @@ const Moduleinfouse: React.FC<ModuleUserInfoProps> = ({ user, onClose }) => {
         </button>
 
         <div className="flex flex-col items-center mb-6">
-          <div className="bg-[#2F855A] p-4 rounded-full shadow-md">
-            <FaUserCircle className="text-white text-5xl" />
-          </div>
+          {user.photo_path ? (
+            <img src={`http://localhost:8000/photos/${user.photo_path.split('/').pop()}`} alt="photo" className="w-20 h-20 rounded-full object-cover" />
+          ) : (
+            <div className="bg-[#2F855A] p-4 rounded-full shadow-md">
+              <FaUserCircle className="text-white text-5xl" />
+            </div>
+          )}
           <h2 className="text-xl font-bold text-[#2F855A] mt-2">
-            {user.nom} {user.prenom}
+            {user.nom}
           </h2>
         </div>
 
         <div className="space-y-4 text-sm text-gray-800">
           <div className="flex items-center gap-3">
-            <FaEnvelope className="text-[#9f7126]" />
-            <span className="truncate">{user.email}</span>
-          </div>
-          <div className="flex items-center gap-3">
-            <FaRecycle className="text-[#9f7126]" />
-            <span>
-              Déchets collectés : <strong>{user.dechets}</strong>
-            </span>
-          </div>
-          <div className="flex items-center gap-3">
-            <FaWallet className="text-[#9f7126]" />
-            <span>
-              Portefeuille : <strong>{user.wallet} Ar</strong>
-            </span>
+            <span>Etablissement : <strong>{user.etablissement}</strong></span>
           </div>
         </div>
 

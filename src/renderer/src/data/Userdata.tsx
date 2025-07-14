@@ -1,18 +1,7 @@
 export type User = {
+  id: number
   nom: string
-  prenom: string
-  email: string
-  dechets: number
-  wallet?: number
+  etablissement: string
+  photo_path: string
 }
-
-export const userData: User[] = [
-  { nom: 'Randrianarisoa', prenom: 'Mialy', email: 'yadjada@gmail.com', dechets: 15, wallet: 0 },
-  { nom: 'Rakoto', prenom: 'Tojo', email: 'yadjada@gmail.com', dechets: 8, wallet: 0 },
-  { nom: 'Rasoa', prenom: 'Fanja', email: 'yadjada@gmail.com', dechets: 12, wallet: 0 },
-  { nom: 'Andrianina', prenom: 'Tiana', email: 'yadjada@gmail.com', dechets: 20, wallet: 0 },
-  { nom: 'Andrianina', prenom: 'Tiana', email: 'yadjada@gmail.com', dechets: 20, wallet: 0 },
-  { nom: 'Andrianina', prenom: 'Tiana', email: 'yadjada@gmail.com', dechets: 20, wallet: 0 },
-  { nom: 'Andrianina', prenom: 'Tiana', email: 'yadjada@gmail.com', dechets: 20, wallet: 0 },
-  { nom: 'Andrianina', prenom: 'Tiana', email: 'yadjada@gmail.com', dechets: 20, wallet: 0 }
-]
+// Les données sont désormais récupérées via l'API backend.

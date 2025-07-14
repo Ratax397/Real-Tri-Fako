@@ -1,4 +1,4 @@
-import { Outlet } from 'react-router-dom'
+import { Outlet, Link } from 'react-router-dom'
 import { useSelector } from 'react-redux'
 import { RootState } from '../../redux/Store'
 import Sidebar from '../../layout/sidebar/Sidebar'
@@ -22,6 +22,9 @@ function Home(): JSX.Element {
         className={`Rigth flex flex-col bg-[#E6E6FA] w-[100%] ${closeBar ? 'ml-16' : 'ml-60 '} transition-all duration-[600ms] ease-in-out`}
       >
         <Navbar />
+        <div className="flex justify-end p-4">
+          <Link to="/auth-face" className="bg-[#2F855A] text-white px-4 py-2 rounded-lg font-semibold shadow-md hover:bg-[#276749] transition">Connexion par reconnaissance faciale</Link>
+        </div>
         <Outlet />
       </div>
     </div>

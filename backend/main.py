@@ -1,6 +1,7 @@
 import os
 from fastapi import FastAPI, Depends, HTTPException, UploadFile, File, Form
 from fastapi.middleware.cors import CORSMiddleware
+from fastapi.staticfiles import StaticFiles
 from sqlalchemy.orm import Session
 from . import models, schemas, crud
 from .database import SessionLocal, engine, Base
@@ -92,3 +93,5 @@ def authenticate_face(photo: UploadFile = File(...), db: Session = Depends(get_d
                 return {"authenticated": True, "user_id": user.id, "nom": user.nom}
     os.remove(temp_path)
     return {"authenticated": False}
+
+app.mount("/photos", StaticFiles(directory=UPLOAD_DIR), name="photos")
